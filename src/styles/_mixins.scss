@@ -1,0 +1,130 @@
+
+/*
+ * ===========================
+ * Breakpoints - Media Queries
+ * @include breakpoint(mouse) { }
+ * ===========================
+ */
+
+@mixin breakpoint( $breakpoint ) {
+	@if $breakpoint == mouse {
+		@media only screen and (min-width: 480px) { @content; }
+	}
+
+	@else if $breakpoint == dog {
+		@media only screen and (min-width: 768px) { @content; }
+	}
+
+	@else if $breakpoint == horse {
+		@media only screen and (min-width: 992px) { @content; }
+	}
+
+	@else if $breakpoint == elephant {
+		@media only screen and (min-width: 1201px) { @content; }
+	}
+
+	@else if $breakpoint == whale {
+		@media only screen and (min-width: 1440px) { @content; }
+	}
+
+	@else if $breakpoint == dinossaur {
+		@media only screen and (min-width: 1680px) { @content; }
+	}
+
+	@else if $breakpoint == chameleon {
+		@media print, ( -o-min-device-pixel-ratio: 5/4 ), ( -webkit-min-device-pixel-ratio: 1.25 ), ( min-resolution: 120dpi ) { @content; }
+	}
+
+	@else {
+		@media only screen and (min-width: $breakpoint) { @content; }
+	}
+}
+
+/* ------- FONTES - REM ------- */
+@function rem( $target, $context: 16px ) {
+	@return ( $target / $context ) * 1rem;
+}
+
+/* ------- FONTES - EM ------- */
+@function em( $target, $context: 16 ) {
+	@return ( $target / $context ) * 1em;
+}
+
+/*
+ * ===========================
+ * MIXIN FONT-SIZE
+ * @include font-size(16px);
+ * ===========================
+ */
+
+@mixin font-size($target, $context: 16px) {
+    font-size: $target;
+    font-size: rem($target,$context);
+}
+
+/*
+ * ===========================
+ * MIXIN CALCULATE-HEIGHT
+ * @include calculate-height(INITIAL-HEIGHT, SCALE, MULTIPLY);
+ * ===========================
+ */
+
+@mixin calculate-height($initial, $scale, $multiply) {
+	height: $initial + ($scale * $multiply);
+}
+
+/* =======================================================================
+## ++ Media Queries
+========================================================================== */
+
+/*
+    Used for media queries.
+    Add these mixins in your normal scss flow.
+
+    Eg.
+    .container{
+        width:1024px;
+
+        @include tablets{
+            width:90%;
+        }
+    }
+*/
+
+@mixin lowresmonitors{
+        @media screen and (max-width: 1350px){ @content;}
+}
+
+@mixin tablets{
+        @media screen and (max-width: 1100px){ @content; }
+}
+
+@mixin phones{
+        @media screen and (max-width: 720px){ @content; }
+}
+
+/* =======================================================================
+## ++ Unit transform
+========================================================================== */
+
+/*
+    Used for making containers have width in percentages.
+    Usage: define elemnt width in px and the width of parent elemnt in px.
+    eg. .block{width:cp(512px, 1024px)} this will result in .block{width:50%;}
+*/
+
+@function cp($target, $container) {
+    @return ($target / $container) * 100%;
+}
+
+/*
+    Used for making px values convert to rem values
+    Usage: define font-size in px and it will convert to rems
+    eg. font-size: rem(14px);
+*/
+
+@function rem($target, $context: $base-font-size) {
+   @if $target == 0 { @return 0 }
+   @return $target / $context + 0rem;
+}
+$base-font-size: 16px;

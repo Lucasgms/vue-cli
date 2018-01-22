@@ -1,0 +1,15 @@
+.catalogue {
+  &--title {
+    color: $color-gray__dark;
+    font-weight: bold;
+  }
+
+  &--slider {
+    padding: 40px;
+
+    .swiper-button-prev,
+    .swiper-button-next {
+      
+    }
+  }
+}
