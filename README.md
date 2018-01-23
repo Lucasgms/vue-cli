@@ -1,6 +1,7 @@
-# vue-webpack
+# vue-cli
 
-> A Vue.js project
+> A Vue.js client project
+> Builded for consume Drupal 8 APIs
 
 ## Build Setup
 
