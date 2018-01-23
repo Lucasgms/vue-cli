@@ -1,0 +1,20 @@
+.btn--cart {
+  display:inline-block;
+  border: none;
+  background-color: #00101f;
+  &:hover {
+      i {
+        border: 2px solid #fff;
+      }
+  }
+
+  i {
+    width: auto;
+    display: block;
+    font-size: 24px;
+    line-height: 48px;
+    color: #fff;
+    border: 2px solid transparent;
+    transition: all .3s ease;
+  }
+}

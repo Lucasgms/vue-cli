@@ -5,9 +5,13 @@
         <swiper-slide v-for="movie in movies" :key="movie.name">
           <card :movie="movie" />
         </swiper-slide>
-        <div class="swiper-button-prev" slot="button-prev"></div>
-        <div class="swiper-button-next" slot="button-next"></div>
-      </swiper>
+        <div class="button button-prev" slot="button-prev">
+          <i class="fa fa-angle-left"></i>
+        </div>
+        <div class="button button-next" slot="button-next">
+          <i class="fa fa-angle-right"></i>
+        </div>
+  </swiper>
 </div>
 </template>
 
@@ -57,16 +61,24 @@ export default {
         img: 'http://s3.foxfilm.com/foxmovies/production/films/104/images/gallery/martian-gallery3-gallery-image.jpg',
         description: 'During a manned mission to Mars, Astronaut Mark Watney (Matt Damon) is presumed dead after a fierce storm and left behind by his crew.',
         rate: 8.1,
+      },
+      {
+        name: 'The Venus 3',
+        category: 'Comédia',
+        year: '1930',
+        img: 'http://s3.foxfilm.com/foxmovies/production/films/104/images/gallery/martian-gallery3-gallery-image.jpg',
+        description: 'During a manned mission to Mars, Astronaut Mark Watney (Matt Damon) is presumed dead after a fierce storm and left behind by his crew.',
+        rate: 8.1,
       }],
       swiperOption: {
         slidesPerView: 4,
         spaceBetween: 50,
         slidesPerGroup: 1,
         loop: false,
-        loopFillGroupWithBlank: true,
+        loopFillGroupWithBlank: false,
         navigation: {
-          nextEl: '.swiper-button-next',
-          prevEl: '.swiper-button-prev',
+          nextEl: '.button-next',
+          prevEl: '.button-prev',
         },
       },
     };
