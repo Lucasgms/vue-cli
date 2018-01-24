@@ -13,22 +13,6 @@ body{
 *{
     box-sizing:border-box;
 }
-
-.movie-item{
-    border-bottom:1px solid #ccc;
-    margin-bottom: 20px;
-    padding:10px;
-
-    img{
-        max-width: 100%;
-        height:auto;
-    }
-
-    h4{
-        margin-top: 0;
-    }
-}
-
 .filter{
     padding: 40px;
     background: #efefef;
@@ -64,6 +48,13 @@ body{
 .clr{clear:both;}
 
 /* =======================================================================
+## ++ Li's and a
+========================================================================== */
+* > a {
+  text-decoration: none;
+}
+
+/* =======================================================================
 ## ++ App
 ========================================================================== */
 
@@ -74,4 +65,16 @@ body{
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+}
+
+.fade-enter-active, .fade-leave-active {
+    transition: all 0.5s ease-in-out;
+}
+.fade-enter {
+    opacity: 1;
+    transform: translate3d(0, 0, 2000px);
+}
+.fade-leave-active {
+    opacity: 0;
+    transform: translate3d(0, 0, 10px);
 }

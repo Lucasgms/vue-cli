@@ -1,22 +1,26 @@
 <template>
   <div id="app">
     <menu-bar />
-      <catalogue />
-    <!-- <footer-bar/> -->
+    <transition name="fade" mode="out-in">
+      <router-view :key="key"></router-view>
+    </transition>
   </div>
 </template>
 
 <script>
 import menuBar from './components/menuBar';
 import footerBar from './components/footerBar';
-import catalogue from './components/catalogue';
 
 export default {
   name: 'App',
   components: {
     menuBar,
     footerBar,
-    catalogue,
+  },
+  computed: {
+    key() {
+      return this.$route.path.replace(/\//g, '_');
+    },
   },
 };
 </script>

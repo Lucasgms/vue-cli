@@ -19,4 +19,29 @@
     border-bottom: 10px solid #fff;
     content: '';
   }
+
+  .cart--items {
+      max-height: 230px;
+      overflow-y: scroll;
+  }
+
+  .cart--message {
+    padding: 10px;
+    background-color: rgba(0, 0, 0, .05);
+    @include font-size(14px);
+    line-height: 24px;
+    font-weight: 500;
+    p {
+      margin: 0;
+    }
+  }
+
+  .cart--action {
+    margin: 5px 15px;
+    background-color: #2c3e50;
+    border-radius: 5px;
+    color: #fff;
+    @include font-size(16px);
+    font-weight: bold;
+  }
 }

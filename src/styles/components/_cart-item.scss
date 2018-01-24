@@ -1,0 +1,25 @@
+.cart-item {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  border-bottom: 1px solid #e7e7e7;
+  background-color: rgba(0, 0, 0, .05);
+
+  .item--name {
+    width: 85%;
+    text-align: left;
+    @include font-size(16px);
+    line-height: 24px;
+    font-weight: bold;
+    color: #2c3e50;
+  }
+
+  .item--action {
+    border: none;
+    background-color: transparent;
+    width: 15%;
+    text-align: center;
+    @include font-size(20px);
+    cursor: pointer;
+  }
+}

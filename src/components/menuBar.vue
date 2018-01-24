@@ -1,9 +1,9 @@
 <template>
   <div class="">
     <nav class="menu">
-      <div class="brand">
+      <router-link to="/" class="brand">
         <img src="../assets/logo.png">
-      </div>
+      </router-link>
       <ul>
           <li v-for="item in items" v-bind:key="item.title">
             <a v-bind:href="item.link" @click="openCart">{{ item.title }}</a>
